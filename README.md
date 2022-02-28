@@ -2,7 +2,7 @@
 ### by Dario V
 
 ## Phase 1: Application Setup
-- Basic React Application
-- Redux State Management
-- State managed in memory
-- Material UI Components & Styling
+- Create Basic React Application
+- Introdce Redux State Management
+- Implement State managed in memory
+- Stylize and create Material UI Components
