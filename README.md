@@ -5,4 +5,4 @@
 - Create Basic React Application
 - Introdce Redux State Management
 - Implement State managed in memory
-- Stylize and create Material UI Components
+- Stylize Material UI Components
