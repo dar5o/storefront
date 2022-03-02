@@ -1,14 +1,14 @@
 import React from 'react';
 import { Button, Typography } from '@material-ui/core';
 import { connect } from 'react-redux';
-import { inactive, active } from '../../store/categories.js';
+import { selectCategory } from '../../store/categories.js';
 
 const viewCategories = (props) => {
   return (
     <>
       <Typography variant="h4" component='h4'> Browse By Category </Typography>
-      <Button variant="contained" color="primary" onClick={() => props.active('Clothing')}>Clothes</Button>
-      <Button variant="contained" color="primary" onClick={() => props.active('Books')}>Books</Button>
+      <Button variant="contained" color="primary" onClick={() => props.selectCategory('Clothing')}>Clothes</Button>
+      <Button variant="contained" color="primary" onClick={() => props.selectCategory('Books')}>Books</Button>
       <Typography>{props.activeDescription}</Typography>
     </>
   )
@@ -22,8 +22,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-  inactive,
-  active,
+  selectCategory,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(viewCategories);

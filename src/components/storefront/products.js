@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { inactive, active } from '../../store/categories.js';
+import { selectCategory } from '../../store/categories.js';
 import { getProducts } from '../../store/products.js';
 import { addToCart } from '../../store/cart.js';
 import { Typography, Button, Grid } from '@material-ui/core';
@@ -33,11 +33,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-const dispatch = {
-  inactive,
-  active,
+const mapDispatchToProps = {
+  selectCategory,
   getProducts,
   addToCart,
 }
 
-export default connect(mapStateToProps, dispatch)(viewProducts);
+export default connect(mapStateToProps, mapDispatchToProps)(viewProducts);

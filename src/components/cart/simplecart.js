@@ -1,17 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { removeFromCart } from '../../store/cart';
+import { Button } from '@material-ui/core';
 
 const SimpleCart = props => {
 
-  if (props.cart.length > 0) {
+  if (props.cart.cart.length > 0) {
     return (
       <>
-       <p>Cart:</p>
-            {props.cart.map((product, item) => {
-              return (
+        {props.cart.cart.map((product, item) => {
+          return (
+                <>
                 <h3 key={item}>
                   {product.name}
                 </h3>
+                <Button variant="contained" color="secondary" onClick={() => props.removeFromCart(product)}>Remove from cart</Button>
+                </>
               )
             })}
       </>
@@ -27,4 +31,8 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(SimpleCart);
+const mapDispatchToProps = dispatch => ({
+  removeFromCart: product => dispatch(removeFromCart(product))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SimpleCart);

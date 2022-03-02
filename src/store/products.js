@@ -18,7 +18,7 @@ const productReducer = (state = initialState, action) => {
   let { type, payload } = action;
 
   switch (type) {
-    case 'ACTIVE':
+    case 'SELECT_PRODUCT':
       const products = getProducts(payload.category);
       return { ...state, products: products }
     default:
